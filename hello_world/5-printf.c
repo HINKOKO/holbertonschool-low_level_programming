@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - prints a single line using puts
+ * main - prints a single line using printf
  * Return: return 0
  */
 
