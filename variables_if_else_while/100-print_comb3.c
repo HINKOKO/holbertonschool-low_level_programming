@@ -16,7 +16,9 @@ int main(void)
 	{
 		for (single = '0'; single <= '9'; single++)
 		{
-			if (!(single == '9') && (doubles == '9'))
+			putchar(doubles);
+			putchar(single);
+			if (!(single == '9' && doubles == '9'))
 			{
 				putchar(',');
 				putchar(' ');
