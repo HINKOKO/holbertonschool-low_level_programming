@@ -1,27 +1,27 @@
 #include <stdio.h>
 
 /**
- * main - generates all combinations of 2 digits
- *Return: always success 0
- *
- */
-
+* main - Print combinations of two digit numbers
+*
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
-	int dig1, dig2;
+	int tens;
+	int ones;
 
-	for (dig1 = 0; dig1 < 10; dig1++)
+	for (tens = 0; tens <= 9; tens++)
 	{
-		for (dig2 = 0; dig2 < 10; dig2++)
+		for (ones = tens + 1; ones <= 9; ones++)
 		{
-			putchar((dig1 % 10) + '0');
-			putchar((dig2 % 10) + '0');
+			putchar(tens + '0');
+			putchar(ones + '0');
 
-			if (dig1 == 9 && dig2 == 9)
-				continue;
-
-			putchar(',');
-			putchar(' ');
+			if (tens < 8)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 
