@@ -1,28 +1,27 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible combinatuions of single-digit
- *Return: return 0 success
+ * main - generates all combinations of 2 digits
+ *Return: always success 0
  *
  */
 
 int main(void)
 {
+	int dig1, dig2;
 
-	int doubles;
-	int single;
-
-	for (doubles = '0'; doubles <= '9'; doubles++)
+	for (dig1 = 0; dig1 < 10; dig1++)
 	{
-		for (single = '0'; single <= '9'; single++)
+		for (dig2 = 0; dig2 < 10; dig2++)
 		{
-			putchar(doubles);
-			putchar(single);
-			if (!(single == '9' && doubles == '9'))
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			putchar((dig1 % 10) + '0');
+			putchar((dig2 % 10) + '0');
+
+			if (dig1 == 9 && dig2 == 9)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
 
