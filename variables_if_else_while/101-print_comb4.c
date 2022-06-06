@@ -21,7 +21,7 @@ int main(void)
 				putchar(tens + '0');
 				putchar(unit + '0');
 
-				if (hund < 9)
+				if (hund < 7)
 				{
 					putchar(',');
 					putchar(' ');
