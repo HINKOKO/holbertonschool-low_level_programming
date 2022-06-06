@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - prints combination of two-two digit 
+ * main - prints combination of two-two digit
  * Return: always 0 success
  */
 
