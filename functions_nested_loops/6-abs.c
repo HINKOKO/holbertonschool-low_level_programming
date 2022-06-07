@@ -3,6 +3,7 @@
 /**
  * _abs - gives the absolute value of an integer
  * @n: integer to test, positive or not
+ * Return:always 0 for success
  */
 
 int _abs(int n)
