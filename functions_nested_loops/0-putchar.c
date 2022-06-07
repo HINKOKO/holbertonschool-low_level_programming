@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * main - print "_putchar" using function putchar, included in main.h
@@ -6,15 +6,9 @@
  */
 
 int main(void)
-
-	char text[8] = "_putchar";
-	int i = 0;
-
-	while (text[i] != '\0')
 {
-	_putchar(text[i++]);
-}
-putchar('\n');
+	_putchar('_');
+	_putchar('\n');
 
-return (0);
+	return (0);
 }
