@@ -10,11 +10,11 @@ int main(void)
 	long int x = 1, y = 2, f;
 	int i = 0;
 
-	printf("%li, %li, ", x, y);
+	printf("%li, %li", x, y);
 	while (i < 48)
 	{
 		f = x + y;
-		printf("%li, ", f);
+		printf(", %li", f);
 		x = y;
 		y = f;
 		i++;
