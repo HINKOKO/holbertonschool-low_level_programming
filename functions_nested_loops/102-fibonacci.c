@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- * fibonacci - displays fibonacci suite numbers
+ * main - displays fibonacci suite numbers
  * Return: exit success with 0
  */
 
-int fibonacci(void)
+int main(void)
 {
 	long int x = 1, y = 2, f;
 	int i = 0;
@@ -19,5 +19,6 @@ int fibonacci(void)
 		y = f;
 		i++;
 	}
+	printf("\n");
 	return (0);
 }
