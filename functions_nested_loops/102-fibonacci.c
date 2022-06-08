@@ -7,26 +7,17 @@
 
 int fibonacci(void)
 {
-	int i, j, k, next;
+	long int x = 1, y = 2, f;
+	int i = 0;
 
-	j = 1;
-
-	k = 1;
-
-	for (i = 1; i <= 50; ++i)
+	printf("%li, %li,", x, y);
+	while (i < 48)
 	{
-		if (j != 5555555)
-		{
-			printf("%d, ", j);
-		}
-		else
-		{
-			printf("%d\n", j);
-		}
-		next = j + k;
-		j = k;
-		k = next;
+		f = x + y;
+		printf("%li, ", f);
+		x = y;
+		y = f;
+		i++;
 	}
-
 	return (0);
 }
