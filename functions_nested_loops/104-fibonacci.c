@@ -11,7 +11,7 @@ int main(void)
 	int i = 0;
 
 	printf("%lu, %lu", x, y);
-	while (i < 50) /* unsigned int limit storage */
+	while (i < 93) /* unsigned int limit storage */
 	{
 		f = x + y;
 		printf(", %lu", f);
