@@ -1,9 +1,8 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- *
- *
+ * main - calculates all natural numbers below 1024,3 and 5 multiples
+ * Return: always 0 for success
  */
 
 int main(void)
