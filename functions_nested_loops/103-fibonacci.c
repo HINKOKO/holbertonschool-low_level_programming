@@ -7,21 +7,18 @@
 
 int main(void)
 {
-	long int x = 1, y = 2, fib, even;
-	int i = 0;
+	long int x = 1, y = 2, even = 2, fib;
 
-	while (i < 4000000)
+	while (fib < 4000000)
 	{
 		fib = x + y;
-		y = x;
-		x = fib;
 		if ((fib % 2) == 0)
 		{
 			even += fib;
 		}
-		printf("%li", even);
-		i++;
+		x = y;
+		y = fib;
 	}
-	printf("\n");
+	printf("%ld\n", even);
 	return (0);
 }
