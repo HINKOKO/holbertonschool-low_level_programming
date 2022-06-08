@@ -7,14 +7,14 @@
 
 int main(void)
 {
-	long int x = 1, y = 2, f;
+	unsigned long x = 1, y = 2, f;
 	int i = 0;
 
-	printf("%li, %li", x, y);
-	while (i < 96)
+	printf("%lu, %lu", x, y);
+	while (i < 50) /* unsigned int limit storage */
 	{
 		f = x + y;
-		printf(", %li", f);
+		printf(", %lu", f);
 		x = y;
 		y = f;
 		i++;
