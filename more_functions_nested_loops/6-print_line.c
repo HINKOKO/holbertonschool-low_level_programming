@@ -3,7 +3,7 @@
 /**
  * print_line - print a line of lenght line = '_'
  * line: integer to determine the lenght of line
- *
+ * @n: integer to determine the number of underscore
  */
 
 void print_line(int n)
