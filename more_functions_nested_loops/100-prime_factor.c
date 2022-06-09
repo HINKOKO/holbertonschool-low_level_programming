@@ -3,7 +3,7 @@
 /**
  * main - finds and print largest prime divisor
  * @n,@div: number and divisor
- * return: 0 for success
+ * Return: 0 for success
  */
 
 int main(void)
