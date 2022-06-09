@@ -3,7 +3,7 @@
 /**
  * print_square - display a square of size i = j
  * @i,@j: the height and width of square
- *
+ * size: gives the dimensions of square
  */
 
 void print_square(int size)
