@@ -7,18 +7,36 @@
 
 int main(void)
 {
-	unsigned long x = 1, y = 2, f;
-	int i = 0;
+	unsigned long i, a, fib, a_head, a_tail, fib_head, fib_tail;
 
-	printf("%lu, %lu", x, y);
-	while (i < 93) /* unsigned int limit storage */
+	a = 1;
+	fib = 2;
+
+	printf("%lu", a);
+
+	for (i = 1; i < 92; i++) /* unsigned long can't store more we have to plit */
 	{
-		f = x + y;
-		printf(", %lu", f);
-		x = y;
-		y = f;
-		i++;
+		printf(", %lu", fib);
+		fib = fib + a;
+		a = fib - a;
 	}
+
+	a_head = a / 1000000000;
+	a_tail = a % 1000000000;
+	fib_head = fib / 1000000000;
+	fib_tail = fib % 1000000000;
+
+	for (i = 92; i < 99; i++)
+	{
+		printf(", %lu", fib_head + (fib_tail / 1000000000));
+		printf("%lu", fib_tail % 1000000000);
+		fib_head = fib_head + a_head;
+		a_head = fib_head - a_head;
+		fib_tail = fib_tail + a_tail;
+		a_tail = fib_tail - a_tail;
+	}
+
 	printf("\n");
+
 	return (0);
 }
