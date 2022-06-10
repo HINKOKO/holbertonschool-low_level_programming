@@ -8,20 +8,25 @@
 
 void print_number(int n)
 {
-	unsigned int n1;
+	unsigned int m, d, lap;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n1 = -n;
+		m = -n;
 	} else
 	{
-		n1 = n;
+		m = n;
 	}
 
-	if (n1 / 10)
+	d = m;
+	lap = 1;
+
+	while (d > 9)
 	{
-		_putchar(n1 / 10);
+		d /= 10;
+		lap *= 10;
 	}
-	_putchar((n1 % 10) + '0');
+	for (; lap >= 1; lap /= 10)
+		_putchar(((m / lap) % 10) + 48);
 }
