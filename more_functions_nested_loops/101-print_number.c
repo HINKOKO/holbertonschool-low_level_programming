@@ -1,32 +1,26 @@
 #include "main.h"
 
 /**
- * print_number - print an integer whatever is
- * @n: integer switch
- *
+ * print_number - print an integer whatever his value
+ * @n:the integer to test
  */
 
 void print_number(int n)
 {
-	unsigned int m, d, lap;
+	unsigned int n1;
 
 	if (n < 0)
 	{
-		_putchar('-');
-		m = -n;
+		_putchar(45);
+		n1 = -n;
 	} else
 	{
-		m = n;
+		n1 = n;
 	}
-
-	d = m;
-	lap = 1;
-
-	while (d > 9)
+	if (n1 / 10)
 	{
-		d /= 10;
-		lap *= 10;
+		print_number(n1 / 10);
 	}
-	for (; lap >= 1; lap /= 10)
-		_putchar(((m / lap) % 10) + 48);
+
+	_putchar((n1 % 10) + 48);
 }
