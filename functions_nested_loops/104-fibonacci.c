@@ -26,7 +26,7 @@ int main(void)
 	fib_head = fib / 1000000000;
 	fib_tail = fib % 1000000000;
 
-	for (i = 91; i < 99; i++)
+	for (i = 92; i < 100; ++i)
 	{
 		printf(", %lu", fib_head + (fib_tail / 1000000000));
 		printf("%lu", fib_tail % 1000000000);
