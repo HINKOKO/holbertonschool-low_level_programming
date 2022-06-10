@@ -14,7 +14,7 @@ int main(void)
 
 	printf("%lu", a);
 
-	for (i = 1; i < 92; i++) /* unsigned long can't store more we have to plit */
+	for (i = 1; i < 91; i++) /* unsigned long can't store more we have to plit */
 	{
 		printf(", %lu", fib);
 		fib = fib + a;
@@ -26,7 +26,7 @@ int main(void)
 	fib_head = fib / 1000000000;
 	fib_tail = fib % 1000000000;
 
-	for (i = 92; i < 99; i++)
+	for (i = 91; i < 99; i++)
 	{
 		printf(", %lu", fib_head + (fib_tail / 1000000000));
 		printf("%lu", fib_tail % 1000000000);
