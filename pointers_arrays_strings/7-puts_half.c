@@ -17,8 +17,6 @@ int _strlen(char *s)
 		s++;
 	}
 
-	s--;
-
 	return (len);
 }
 
@@ -32,15 +30,21 @@ void puts_half(char *str)
 	int i, mid, leng;
 
 	leng = _strlen(str);
+/* we have to determine if the string is even or odd */
 
 	if (leng % 2 != 0)
-		mid = (leng - 1) / 2;
-	else
+	{
+		mid = (leng + 1) / 2;
+	}else
+	{
 		mid = leng / 2;
+	}
 
-	for (i = mid; i < leng; i++)
+	for (i = mid; i <= leng; i++)
 	{
 		_putchar(str[i]);
 	}
 	_putchar('\n');
 }
+
+
