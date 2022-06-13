@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- *
- *
+ * _strlen - get the lenght of a string
+ * rev_string - print string in reverse order
  *
  */
 
@@ -15,6 +15,7 @@ int _strlen(char *s)
 		len++;
 		s++;
 	}
+	s--;
 
 	return (len);
 }
@@ -25,16 +26,15 @@ void rev_string(char *s)
 	char temp;
 
 	left = 0;
-	right = _strlen(s) - 1;
+	right = (_strlen(s) - 1);
 	
 	while (left < right)
 	{
-		temp = s[right];
-		s[right] = s[left];
-		s[left] = temp;
-		_putchar(*s);
+		temp = s[left];
+		s[left] = s[right];
+		s[right] = temp;
+		left++;
 		right--;
 	}
-	_putchar('\n');
 }
 
