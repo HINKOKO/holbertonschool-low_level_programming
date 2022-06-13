@@ -2,8 +2,8 @@
 
 /**
  * _strlen - get the lenght of a string
- * rev_string - print string in reverse order
- *
+ * Return: return the length of string
+ * @s: the string to evaluate
  */
 
 int _strlen(char *s)
@@ -20,6 +20,11 @@ int _strlen(char *s)
 	return (len);
 }
 
+/**
+  * rev_string - reverse the string
+  * @s: the string we want to reverse
+  */
+
 void rev_string(char *s)
 {
 	int left, right;
@@ -27,7 +32,7 @@ void rev_string(char *s)
 
 	left = 0;
 	right = (_strlen(s) - 1);
-	
+
 	while (left < right)
 	{
 		temp = s[left];
