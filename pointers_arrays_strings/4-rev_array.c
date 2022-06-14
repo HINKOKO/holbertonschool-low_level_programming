@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- *
- *
+ *reverse_array - function that reverse THE ORDER of array,
+ *it is not printing in reverse, ok ?
+ *@a: pointer on array
+ *@n: number of array elements
  *
  */
 
