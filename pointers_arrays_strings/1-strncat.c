@@ -23,9 +23,13 @@ int _strlen(char *s)
 #include "main.h"
 
 /**
- *
- *
- *
+ * _strncat - recommended instead of strcat, it's safer because
+ * strcat will copy whatever size, might cause buffer overflow
+ * while strncat check size and will copy only n bytes
+ * @n: number of bytes to copy
+ * Return: pointer to dest stringi
+ * @dest: dest string
+ * @src: source string
  */
 
 char *_strncat(char *dest, char *src, int n)
