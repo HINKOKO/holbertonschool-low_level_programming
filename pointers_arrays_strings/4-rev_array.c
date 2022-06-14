@@ -2,7 +2,8 @@
 
 /**
  *reverse_array - function that reverse THE ORDER of array,
- *it is not printing in reverse, ok ?
+ *we don't print them in reverse order,
+ *we reverse the elments in place, ok ?
  *@a: pointer on array
  *@n: number of array elements
  *
