@@ -18,7 +18,10 @@ char *_strcat(char *dest, char *src)
 
 	while (*src != '\0')
 	{
-		*dest = *src;
+		*dest = *src; /**
+				* dest pointing on NULL charac, this statement will append first
+				* charac of src in place of NULl charac from dest
+				*/
 		dest++;
 		src++;
 	}
