@@ -1,22 +1,19 @@
 #include "main.h"
 
 /**
- * atoi - converts a string to an integer
- *
+ * _atoi - converts a string to an integer
+ * @s: the string to convert
  * Return: return the result with good sign
  */
 
 int _atoi(char *s)
 {
 	/**
-	  *initialize result
-	  *initialize sign as positive
-	  *initialize index of first digit 
-	  */
+	 *initialize result
+	 *initialize sign as positive
+	 */
 	unsigned int res = 0;
 	int sign = 1;
-	int i = 0;
-	
 
 	do {
 		if (*s == '-')
