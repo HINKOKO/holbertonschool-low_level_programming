@@ -28,3 +28,4 @@ int _atoi(char *s)
 	} while (*s++);
 
 	return (res * sign);
+}
