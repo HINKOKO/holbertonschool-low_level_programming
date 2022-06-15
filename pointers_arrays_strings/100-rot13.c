@@ -8,8 +8,8 @@
 
 char *rot13(char *c)
 {
-	char b[27] = "ABCDEFGHIJKLMabcdefghijklm";
-	char a[27] = "NOPQRSTUVWXYZnopqrstuvwxyz";
+	char b[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char a[27] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	int i, j;
 
