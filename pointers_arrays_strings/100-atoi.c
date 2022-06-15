@@ -13,25 +13,18 @@ int _atoi(char *s)
 	  *initialize sign as positive
 	  *initialize index of first digit 
 	  */
-	int res = 0;
+	unsigned int res = 0;
 	int sign = 1;
 	int i = 0;
+	
 
-	/**
-	  * if number is negative
-	  *we have to keep the sign
-	  */
-	if (s[0] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	/**
-	  *iterate through all char/digit
-	  */
-	for (; s[i] != '\0'; i++)
-		res = res * 10 +s[i] - 48;
+	do {
+		if (*s == '-')
+			sign *= -1;
+		else if (*s >= '0' && *s <= '9')
+			res = (res * 10) + (*s - '0');
+		else if (res > 0)
+			break;
+	} while (*s++);
 
-	return (sign * res);
-}
-
+	return (res * sign);
