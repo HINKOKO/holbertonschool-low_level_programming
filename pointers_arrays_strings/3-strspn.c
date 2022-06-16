@@ -10,7 +10,6 @@
  * @s: initial string
  * @accept: the character to check the match
  * Return: return the lenght of segment(nmbr of bytes)
- * _strchr - locates charac in a string
  *
  *
  */
@@ -25,6 +24,13 @@ unsigned int _strspn(char *s, char *accept)
 	}
 	return (len);
 }
+/**
+ * _strchr - locates a charac in a string
+ * Return: return a pointer to the first
+ * occurence of c
+ * @c: character to find
+ * @s: the string to roll along
+ */
 
 char *_strchr(char *s, char c)
 {
@@ -34,4 +40,3 @@ char *_strchr(char *s, char c)
 	} while (*s++);
 	return (NULL);
 }
-
