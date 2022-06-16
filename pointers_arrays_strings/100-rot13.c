@@ -15,7 +15,7 @@ char *rot13(char *c)
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
-		for (j = 0; b[j] != '\0'; j++)
+		for (j = 0; j < 53; j++)
 		{
 			if (c[i] == b[j])
 				c[i] = a[j];
