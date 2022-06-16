@@ -7,15 +7,15 @@
  * Return: return a pointer to the memory area s
  * @n: the n bytes to fill with b
  * @b: constant byte to be filled
+ * @s: pointer to the destination object
  */
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	char *p = s;
 
 	while (n--)
 	{
-		*p++ = (unsigned char)b;
+		*s++ = b;
 	}
 	return (s);
 }
