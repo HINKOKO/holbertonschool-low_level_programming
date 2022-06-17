@@ -10,18 +10,17 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i;
-	unsigned int sumright, sumleft;
-
-	sumright = 0;
-	sumleft = 0;
+	int i, temp1, temp2;
+	int left = 0;
+	int right = 0;
 
 	for (i = 0; i < size; i++)
 	{
-		sumright += a[(size * i) + i];
-		sumleft += a[(size * (1 + i)) + (1 + i)];
+		temp1 = (size * i) + i;
+		right += *(a + temp1);
+		temp2 = (size * i) + (size - 1 - i);
+		left += *(a + temp2);
 	}
-	printf("%d, %d", sumright, sumleft);
-	printf("\n");
+	printf("%d, %d\n", right, left);
 }
 
