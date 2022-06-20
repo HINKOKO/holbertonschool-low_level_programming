@@ -3,6 +3,7 @@
  * _strlen_recursion - returns string lenght
  * using recursuion
  * @s: the string to calculus
+ * Return: 0 for success 
  */
 
 int _strlen_recursion(char *s)
