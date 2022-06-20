@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include <stddef.h>
+int _strcmp(char *s1, char *s2);
 /**
  * wildcmp - compares two string with recursion
  * it's wild !!
@@ -14,10 +15,10 @@ int wildcmp(char *s1, char *s2)
       *if one of the pointer is a NULL pointer return directly -2
       * in order to stop the process
       */
-    if(s1 == NULL || s2 == NULL)
+    if (s1 == NULL || s2 == NULL)
             return (-2);
  
-    if(strcmp(s1, s2) == 0) /**
+    if (_strcmp(s1, s2) == 0) /**
 			      *the two strings are identical
 			      */
         return (0);
@@ -26,10 +27,11 @@ int wildcmp(char *s1, char *s2)
         wildcmp(s1, ++s2);
     else if ((s1[0]) == (s2[0]) && (s2[0]) == ((s1 + 1)[0]))
         wildcmp(++s1, s2);
-    else if((s[0])==(s1[0]))
-        CompareStrings(++s, ++s1);
+    else if((s2[0])==(s1[0]))
+        wildcmp(++s2, ++s1);
     else
         return (-1);
+    return (0);
 }
 
 /**
