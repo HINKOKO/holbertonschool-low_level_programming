@@ -10,7 +10,7 @@ int _strlen(char *s)
 {
 	if (*s == '\0')
 		return (0);
-	else 
+	else
 		return (1 + _strlen(s + 1));
 }
 /**
@@ -18,6 +18,7 @@ int _strlen(char *s)
  * @c: string to check
  * @left: left index position
  * @right: right index position
+ * Return: 1 for palindrom, 0 for not one
  */
 
 int checkPalRec(char *c, int left, int right)
@@ -25,12 +26,12 @@ int checkPalRec(char *c, int left, int right)
 	/**
 	 * left = right means only one charac
 	 */
-	if (left == right)
+	if (left >= right)
 		return (1);
 	else if (c[left] != c[right])
 		return (0);
-	else 
-		return(checkPalRec(c, left + 1, right - 1));
+	else
+		return (checkPalRec(c, left + 1, right - 1));
 }
 
 /**
@@ -48,5 +49,4 @@ int is_palindrome(char *s)
 		return (1);
 	return (checkPalRec(s, 0, k - 1));
 }
-				
 
