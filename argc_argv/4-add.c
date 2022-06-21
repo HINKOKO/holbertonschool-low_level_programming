@@ -6,6 +6,7 @@
  * isnum - check if character in string
  * are exclusively number
  * @a: string to check for baby
+ * Return: 0 if one char in string is not a int
  */
 
 int isnum(char *a)
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
 	int sum;
 	int i;
 
-	if (argc < 2)
+	if (argc < 1)
 	{
 		printf("0\n");
 	}
