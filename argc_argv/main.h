@@ -10,3 +10,8 @@ int _atoi(char *s);
 
 int mul(int a, int b);
 
+int add(int a, int b);
+
+int isnum(char *a);
+
+
