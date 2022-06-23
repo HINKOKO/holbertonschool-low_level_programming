@@ -14,16 +14,16 @@
 
 char *argstostr(int ac, char **av)
 {
-	int i;
+	int i, j;
 	int len = 1;
 	char *str;
 
 	if (ac == 0 || av == 0)
 		return (NULL);
 
-	for (i = 0; i < argv; i++)
+	for (i = 0; i < ac; i++)
 	{
-		len += strlen(argv[i]);
+		len += strlen(av[i]);
 	}
 
 	str = malloc(sizeof(char) * len);
@@ -33,14 +33,17 @@ char *argstostr(int ac, char **av)
 
 	str[0] = '\0';
 
-	for (i = 1; i < argv; i++)
+	for (i = 1; i < ac; i++)
 	{
-		strcat(str, argv[i]);
+		for (j = 1; j < av[i][j]; j++)
+		strcat(str, av[i][j]);
 	}
 
 	printf("%s\n", str);
 
 	free(str);
+
+	return (str);
 }
 
 
