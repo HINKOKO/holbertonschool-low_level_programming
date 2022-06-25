@@ -1,65 +1,30 @@
 #include "main.h"
-#include <stddef.h>
-int _strcmp(char *s1, char *s2);
+#include <stdio.h>
+
 /**
- * wildcmp - compares two string with recursion
- * it's wild !!
- * @s1: source string to comp
- * @s2 other string to comp to source s1
- * Return: -2 for stopping process
+ * wildcmp - function that compares two strings
+ * and allows a wildcard char '*'
+ * @s1: string compared
+ * @s2: string to compare with s1
+ * Return: 1 if it is identical, otherwise 0
  */
 
 int wildcmp(char *s1, char *s2)
 {
-    /**
-      *if one of the pointer is a NULL pointer return directly -2
-      * in order to stop the process
-      */
-    if (s1 == NULL || s2 == NULL)
-            return (-2);
- 
-    if (_strcmp(s1, s2) == 0) /**
-			      *the two strings are identical
-			      */
-        return (0);
- 
-    if ((s1[0]) == (s2[0]) && (s1[0]) == ((s2 + 1)[0]))
-        wildcmp(s1, ++s2);
-    else if ((s1[0]) == (s2[0]) && (s2[0]) == ((s1 + 1)[0]))
-        wildcmp(++s1, s2);
-    else if((s2[0])==(s1[0]))
-        wildcmp(++s2, ++s1);
-    else
-        return (-1);
-    return (0);
-}
-
-/**
- * _strcmp - function that compares two strings
- * using ascii values of characters
- * output the difference of  numeric ascii
- *@s1: one of the string
- *@s2: the other string
- *Return: either 0 for identic, the difference when there is
- *in ascii code difference
- */
-
-int _strcmp(char *s1, char *s2)
-{
-	while ((*s1 != '\0' && *s2 != '\0') && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
+	if (*s1 == '\0' && *s2 == '\0')
+		return (1);
 
 	if (*s1 == *s2)
+		return (wildcmp(s1 + 1, s2 + 1));
+
+	if (*s2 == '*')
 	{
-		return (0); /**
-			      * strings identical
-			      */
+		if (*(s2 + 1) == '*')
+			return (wildcmp(s1, s2 + 1));
+
+		if (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1))
+			return (1);
 	}
-	else
-	{
-		return (*s1 - *s2);
-	}
+
+	return (0);
 }
