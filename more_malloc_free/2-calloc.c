@@ -20,7 +20,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	callmem = (int *)malloc(sizeof(int) * nmemb * size);
+	callmem = malloc(nmemb * size);
 
 	if (callmem == NULL)
 		return (NULL);
