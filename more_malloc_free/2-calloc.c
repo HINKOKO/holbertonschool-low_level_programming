@@ -1,5 +1,8 @@
+#include <string.h>
 #include "main.h"
 #include <stdlib.h>
+
+char *_memset(char *s, char b, unsigned int n);
 
 /**
  * _calloc - function that allocates memory
@@ -22,7 +25,19 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (callmem == NULL)
 		return (NULL);
 
+	_memset(callmem, 0, nmemb * size);
+
 	return (callmem);
 }
 
+char *_memset(char *s, char b, unsigned int n)
+{
+	char *p = s;
+
+	while (n--)
+	{
+		*p++ = b;
+	}
+	return (s);
+}
 
