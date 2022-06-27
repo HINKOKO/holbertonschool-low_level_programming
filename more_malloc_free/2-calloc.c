@@ -29,6 +29,15 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	return (callmem);
 }
+/**
+ * _memset - function that fill memory located by pointer s
+ * with a constant byte b, into the first n character of the object
+ * pointed by s
+ * @s: pointer to dest object
+ * @b: constant byte to fill
+ * @n: the n bytes to fill with b
+ * Return: returns a pointer to memory area s
+ */
 
 char *_memset(char *s, char b, unsigned int n)
 {
