@@ -1,5 +1,12 @@
 #ifndef __DOG__
 #define __DOG__
+/**
+ * struct dog - create a struct for common
+ * details about a dog
+ * @name: dog's name
+ * @owner: his/her master
+ * @age: its age
+ */
 
 struct dog
 {
