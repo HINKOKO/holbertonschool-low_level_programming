@@ -1,6 +1,6 @@
-#include <stdlib.h>
 #ifndef __FUNCPOINT__
 #define __FUNCPOINT__
+#include <stdlib.h>
 
 void print_name(char *name, void (*f)(char *));
 
