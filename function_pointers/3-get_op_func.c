@@ -3,13 +3,10 @@
 #include <string.h>
 
 /**
- * get_op_func - function pointer to get the
- * right operating function depending on what 
- * the user slap on keyboard.
- * 
- *
- *
- *
+ * get_op_func - function pointer for picking up
+ * the right operation asked by user
+ * @s: pointer to operation to perform
+ * Return: pointer to the correct function
  */
 
 int (*get_op_func(char *s))(int, int)
@@ -23,13 +20,14 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 
-	int i; 
+	int i;
 
-	while (ops[i].op)
+	i = 0;
+	while (ops[i].op != NULL)
 	{
 		if (strcmp(s, ops[i].op) == 0)
-			return (ops[i].f);
+			break;
 		i++;
 	}
-	return (NULL);
+	return (ops[i].f);
 }

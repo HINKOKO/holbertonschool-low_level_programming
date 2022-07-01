@@ -1,8 +1,7 @@
 #ifndef __CALC__
-#define
+#define __CALC__
 
 /**
- *
  * struct op- structure for operations
  * @op: the operator
  * @f: function associated
