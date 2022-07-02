@@ -27,7 +27,12 @@ int main(int argc, char *argv[])
 	array = (char *)main;
 	for (i = 0; i < bytes; i++)
 	{
-		printf("%02xHH\n", array[i]);
+		if (i == bytes - 1)
+		{
+			printf("%02hhx\n", array[i]);
+			break;
+		}
+		printf("%02hhx", array[i]);
 	}
 	return (0);
 }
