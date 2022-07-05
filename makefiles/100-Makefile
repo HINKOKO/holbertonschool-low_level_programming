@@ -7,7 +7,7 @@ LDFLAGS=
 .PHONY: all clean oclean fclean re
 
 all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
+	$(CC) $(OBJ) -o $(NAME) $(LDFLAGS)
 
 clean:
 	$(RM) *~ $(NAME)
