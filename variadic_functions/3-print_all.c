@@ -47,6 +47,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int i, j;
 	va_list list;
+	char *sep = "";
 
 	prt pick[] = {
 		{'c', print_c},
@@ -58,7 +59,6 @@ void print_all(const char * const format, ...)
 
 	va_start(list, format);
 
-
 	i = 0;
 	while (format && format[i])
 	{
@@ -67,13 +67,15 @@ void print_all(const char * const format, ...)
 		{
 			if (pick[j].c == format[i])
 			{
+				printf("%s", sep);
 				pick[j].f(list);
-				if (format[i + 1])
-					printf(", ");
+				sep = ", ";
+				break;
 			}
 			j++;
 		}
 		i++;
 	}
+	va_end(list);
 	printf("\n");
 }
