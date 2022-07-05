@@ -69,12 +69,11 @@ void print_all(const char * const format, ...)
 			{
 				pick[j].f(list);
 				if (format[i + 1])
-				{
 					printf(", ");
-				}
-				j++;
 			}
+			j++;
 		}
 		i++;
 	}
+	printf("\n");
 }
