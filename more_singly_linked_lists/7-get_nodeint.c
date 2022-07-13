@@ -4,7 +4,7 @@
  *get_nodeint_at_index - find the nth node o fthe list
  *@index: index of the node to be find
  *@head: pointer to starting point of list
- *return: the nth node of the list
+ *Return: the nth node of the list
  */
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
