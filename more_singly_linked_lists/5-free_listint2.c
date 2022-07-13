@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- *free_listint - function that frees our listint list
- *@head: pointer to the starting point of list
+ *free_listint2 - function that frees our listint list
+ *@head: double pointer to the starting point of list
  */
 
 void free_listint2(listint_t **head)
