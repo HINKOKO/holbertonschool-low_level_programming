@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	}
 	if (r < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	x = close(fdr);
