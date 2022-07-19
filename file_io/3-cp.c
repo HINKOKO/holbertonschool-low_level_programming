@@ -10,8 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-	int fdr, fdw, r;
-	int x, y;
+	int fdr, fdw, r, x, y;
 	char tamp[1024];
 
 	if (argc != 3)
@@ -19,7 +18,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	fdr = open(argv[1], O_RDONLY);
 	if (fdr < 0)
 	{
@@ -28,7 +26,6 @@ int main(int argc, char *argv[])
 	}
 
 	fdw = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, PERMS);
-
 	while ((r = read(fdr, tamp, 1024)) > 0)
 	{
 		if (write(fdw, tamp, r) != r || fdw < 0)
@@ -37,9 +34,13 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
+	if (r < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+		exit(98);
+	}
 	x = close(fdr);
 	y = close(fdw);
-
 	if (x < 0 || y < 0)
 	{
 		if (x < 0)
