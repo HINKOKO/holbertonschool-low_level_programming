@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- *get_nodeint_at_index - find the nth node o fthe list
+ *get_nodeint_at_index - find the nth node of the list
  *@index: index of the node to be find
  *@head: pointer to starting point of list
  *Return: the nth node of the list
