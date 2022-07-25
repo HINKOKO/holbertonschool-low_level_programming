@@ -41,7 +41,7 @@ char **strtow(char *str)
 	if (words == 0)
 		return (NULL);
 
-	mat = malloc(sizeof(char *) * (words + 1));
+	mat = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!mat)
 		return (NULL);
 
@@ -52,7 +52,7 @@ char **strtow(char *str)
 			if (c)
 			{
 				end = i;
-				tmp = malloc(sizeof(char) * (c + 1));
+				tmp = (char *)malloc(sizeof(char) * (c + 1));
 				if (!tmp)
 					return (NULL);
 				while (start < end)
