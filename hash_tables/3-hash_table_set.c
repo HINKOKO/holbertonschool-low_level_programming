@@ -1,8 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * @brief
- *
+ * hash_table_set - function for adding element to an hash table
+ * @ht: the hash table we want to fill
+ * @key: is the key
+ * @value: value associated with the key
  */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
