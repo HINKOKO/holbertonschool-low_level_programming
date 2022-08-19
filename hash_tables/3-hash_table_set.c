@@ -1,40 +1,68 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - function for adding element to an hash table
- * @ht: the hash table we want to fill
- * @key: is the key
- * @value: value associated with the key
- * Return: 1 if operation is a success, 0 otherwise
+ * @brief
+ *
+ */
+
+hash_node_t *make_new_node(const char *key, const char *value)
+{
+	hash_node_t *node;
+
+	node = malloc(sizeof(hash_node_t));
+	if (!node)
+		return (NULL);
+	node->key = strdup(key);
+	if (!node->key)
+	{
+		free(node);
+		return (NULL);
+	}
+	node->value = strdup(value);
+	if (!node->value)
+	{
+		free(node->key);
+		free(node);
+		return (NULL);
+	}
+	node->next = NULL;
+	return (node);
+}
+
+/**
+ * hash_table_set - add element to an hash table
+ * @ht: hash table to add elmts to
+ * @key: is the key baby
+ * @value: data we want to store
  */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned int index = 0;
-	hash_node_t *tmp, *new;
+	unsigned long int index;
+	hash_node_t *newnode, *mover;
+	char *new;
 
-	if (!key || strlen(key) == 0 || !ht || !value)
+	if (!ht || !key || strlen(key) == 0 || !value)
 		return (0);
-
 	index = key_index((const unsigned char *)key, ht->size);
-	tmp = ht->array[index];
-
-	while (tmp)
+	mover = ht->array[index];
+	while (mover)
 	{
-		if (strcmp(tmp->key, key) == 0)
+		if (strcmp(mover->key, key) == 0)
 		{
-			free(tmp->value);
-			tmp->value = strdup(value);
-			if (tmp->value == NULL)
+			new = strdup(value);
+			if (!new)
 				return (0);
+			free(mover->value);
+			mover->value = new;
 			return (1);
 		}
-		tmp = tmp->next;
+		mover = mover->next;
 	}
-	new = malloc(sizeof(hash_node_t));
-	new->key = strdup(key);
-	new->value = strdup(value);
-	new->next = ht->array[index];
-	ht->array[index] = new;
+	newnode = make_new_node(key, value);
+	if (!newnode)
+		return (0);
+	newnode->next = ht->array[index];
+	ht->array[index] = newnode;
 	return (1);
 }
