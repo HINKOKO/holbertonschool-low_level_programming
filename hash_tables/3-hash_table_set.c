@@ -1,8 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * @brief
- *
+ * make_new_node - function for creating a hash node
+ * @key: key of the node
+ * @value: value for the new node
+ * Return: the new node or NULL if failure
  */
 
 hash_node_t *make_new_node(const char *key, const char *value)
