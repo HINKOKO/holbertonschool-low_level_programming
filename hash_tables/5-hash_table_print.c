@@ -9,8 +9,9 @@ void hash_table_print(const hash_table_t *ht)
 {
 	unsigned int i;
 	hash_node_t *printer;
+	char status = 0; /*trick for skipping last comma*/
 
-	if (!ht || !ht->array)
+	if (ht == NULL || ht->array == NULL)
 		return;
 
 	printf("{");
@@ -19,7 +20,10 @@ void hash_table_print(const hash_table_t *ht)
 		printer = ht->array[i];
 		while (printer != NULL)
 		{
-			printf("'%s': '%s', ", printer->key, printer->value);
+			if (status == 1)
+				printf(", ");
+			printf("'%s': '%s'", printer->key, printer->value);
+			status = 1;
 			printer = printer->next;
 		}
 	}
