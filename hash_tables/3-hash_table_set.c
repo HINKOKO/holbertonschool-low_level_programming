@@ -36,6 +36,7 @@ hash_node_t *make_new_node(const char *key, const char *value)
  * @ht: hash table to add elmts to
  * @key: is the key baby
  * @value: data we want to store
+ * Return: 0 for failure but 1 is a success !
  */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
