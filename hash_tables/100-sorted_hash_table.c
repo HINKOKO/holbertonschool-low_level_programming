@@ -74,12 +74,24 @@ void sorted_insert(shash_table_t *ht, shash_node_t *node)
 		return;
 	}
 	browser = ht->shead;
-	while (browser->snext != NULL && browser->snext->value < node->value)
+	while (browser != NULL)
 	{
-		browser = browser->snext;
+		if (strcmp(node->key, browser->key) < 0)
+		{
+			node->snext = browser;
+			node->sprev = browser->sprev;
+			browser->sprev = node;
+			if (node->sprev != NULL)
+				node->sprev->snext = node;
+			else
+				ht->shead = node;
+			return;
+		}
+		browser = browser->next;
 	}
-	node->snext = browser->snext;
-	browser->snext = node;
+	node->sprev = ht->stail;
+	ht->stail->snext = node;
+	ht->stail = node;
 }
 /**
  * shash_table_set - sets key to value in a sorted hash table
