@@ -7,7 +7,7 @@
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
-	unsigned int i;
+	unsigned long int i;
 	shash_table_t *stb = malloc(sizeof(shash_table_t));
 
 	if (!stb)
@@ -15,7 +15,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 	stb->size = size;
 	stb->shead = NULL;
 	stb->stail = NULL;
-	stb->array = malloc(size * sizeof(shash_node_t *));
+	stb->array = malloc(size * sizeof(shash_node_t));
 	if (!stb->array)
 	{
 		free(stb);
@@ -154,24 +154,20 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 void shash_table_print(const shash_table_t *ht)
 {
-	unsigned int i;
 	shash_node_t *sprinter;
 	char status = 0; /* trick to skip last comma */
 
 	if (!ht || !ht->array)
 		return;
 	printf("{");
-	for (i = 0; i < ht->size; i++)
+	sprinter = ht->shead;
+	while (sprinter != NULL)
 	{
-		sprinter = ht->shead;
-		while (sprinter != NULL)
-		{
-			if (status == 1)
-				printf(", ");
-			printf("'%s': '%s'", sprinter->key, sprinter->value);
-			status = 1;
-			sprinter = sprinter->snext;
-		}
+		if (status == 1)
+			printf(", ");
+		printf("'%s': '%s'", sprinter->key, sprinter->value);
+		status = 1;
+		sprinter = sprinter->snext;
 	}
 	printf("}\n");
 }
@@ -183,24 +179,20 @@ void shash_table_print(const shash_table_t *ht)
 
 void shash_table_print_rev(const shash_table_t *ht)
 {
-	unsigned int i;
 	shash_node_t *sprinter;
 	char status = 0; /* trick to skip last comma */
 
 	if (!ht || !ht->array)
 		return;
 	printf("{");
-	for (i = 0; i < ht->size; i++)
+	sprinter = ht->stail;
+	while (sprinter != NULL)
 	{
-		sprinter = ht->stail;
-		while (sprinter != NULL)
-		{
-			if (status == 1)
-				printf(", ");
-			printf("'%s': '%s'", sprinter->key, sprinter->value);
-			status = 1;
-			sprinter = sprinter->sprev;
-		}
+		if (status == 1)
+			printf(", ");
+		printf("'%s': '%s'", sprinter->key, sprinter->value);
+		status = 1;
+		sprinter = sprinter->sprev;
 	}
 	printf("}\n");
 }
