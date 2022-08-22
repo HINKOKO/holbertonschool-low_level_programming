@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * shah_table_create - create a sorted hash table PHP elephant you my friend
+ * shash_table_create - create a sorted hash table PHP elephant you my friend
  * @size: size of sorted hash table
  * Return: the sorted hash table we create
  */
@@ -28,7 +28,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
- * shash_node_t - give birth to a new node for our sorted hash table
+ * make_new_snode - give birth to a new node for our sorted hash table
  * @key: key for value
  * @value: to be stored
  * Return: NULL for failure or the new node if successfull
@@ -208,7 +208,10 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
-
+/**
+ * shash_table_delete - frees a sorterd hash table
+ * @ht: the sorted hash table to free
+ */
 void shash_table_delete(shash_table_t *ht)
 {
 	unsigned int i;
