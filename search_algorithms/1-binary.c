@@ -2,9 +2,9 @@
 
 /**
  * print_array - Prints an array of integers
- *
- * @array: The array to be printed
- * @size: Number of elements in @array
+ * @array: pointer to first element of array
+ * @left: left or start of array or sub_array
+ * @right: right or end of array or sub_array
  */
 void print_array(int *array, size_t left, size_t right)
 {
@@ -17,8 +17,12 @@ void print_array(int *array, size_t left, size_t right)
 }
 
 /**
- * @brief
- *
+ * binary_rec - help function to make a recursive search
+ * @array: pointer to first element of the array
+ * @l: left or start of array or sub_array
+ * @r: right or end of array or sub_array
+ * @value: value to be found in array
+ * Return: -1 if failure, or the sub array on so on
  */
 
 int binary_rec(int *array, size_t l, size_t r, int value)
@@ -37,8 +41,13 @@ int binary_rec(int *array, size_t l, size_t r, int value)
 }
 
 /**
- * @brief
- *
+ * binary_search - search for a value in a sorted array
+ * using Binary search algorithm
+ * @array: sorted array we're looking into our value
+ * @size: number of elements in the array
+ * @value: value to be found in array
+ * Return: first index where value is located, or -1
+ * if array is NULL or value not found
  */
 
 int binary_search(int *array, size_t size, int value)
