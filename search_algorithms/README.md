@@ -1,13 +1,13 @@
 # Search Algorithms and space complexity
 
-## Purpose of this repository
+## <b>Purpose of this repository</b>
 
-This repo was designed to study and implement some basics of searching algorithms:
+Not even a single day pass, when we do not have to search for something in our day to day life, car keys, books, pen, mobile charger and what not. Same is the life of a computer, there is so much data stored in it, that whenever a user asks for some data, computer has to search it's memory to look for the data and make it available to the user. And the computer has it's own techniques to search through it's memory fast, which you we will learn more about in our repository of Search Algorithms.
 
 - Sequential Search: In this, the list or array is traversed sequentially and every element is checked. For example: <u>Linear Search</u>
 - Interval Search: These algorithms are specifically designed for searching in sorted data-structures. These type of searching algorithms are more efficient than Linear Search method, as they repeatedly target the center of the search structure and divide the search space in 2 half. For Example: <u>Binary Search.</u>
 
-## Linear Search
+## <b>Linear Search</b>
 
 Linear search (known as sequential search) is an algorithm for finding a target value within a list. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched. This is one of the most basic search algorithms and is directly, inspired by real-life events.
 
@@ -35,3 +35,27 @@ In theory, Linear search in average makes <b>n/2</b> comparisons where <b>n</b> 
 
 In terms of implementation, linear search algorithm takes <b>2n+1 comparisons</b> (n to check if target element is found and <b>n+1 comparisons</b> to check if end of list is reached) in the worst case. With optimizations, we can make <b>n+1 comparisons</b> in the worst case.
 
+## <b>Binary Search</b>
+
+Binary Search algorithm is an efficient comparison based search algorithm where the <b>key idea is to reduce the size of search space by half in every iteration</b> by exploiting a restriction on the search space that it is in sorted order. When suitable, binary search is choose over other search algorithms.
+
+<b>The key idea</b>: a list is sorted and we compare a number with a random number from the list, we can say whether the potential match lies on the left or the right of the number.
+
+When the number is the middle element, then we can reduce the number of potential matches by half.
+
+### <b>Algorithm</b>
+<b>The steps involved in Binary search algorithm are:</b><br>
+<em>Pre-condition: The element list must be sorted.</em>
+
+- <b>Step 1:</b> Find middle element of the array.
+- <b>Step 2:</b> Compare the value of the middle element with the target value.
+- <b>Step 3:</b> If they match, it is returned.
+- <b>Step 4:</b> If the value is less or greater than the target, the search continues in the lower or upper half of the array accordingly.
+- <b>Step 5:</b> The same procedure as in step 2-4 continues, but with a smaller part of the array. This continues until the target element is found or until there are no elements left.
+
+### <b>Complexity</b>
+
+- Worst case time complexity: O(log N)
+- Average case time complexity: O(log N)
+- Best case time complexity: O(1)
+- Space complexity: O(1)
