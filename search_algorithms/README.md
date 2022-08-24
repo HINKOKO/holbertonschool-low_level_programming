@@ -21,7 +21,7 @@ Steps involved in this algorithm are:
 - <b>Step 2:</b> Compare the current element with the target element. If matches, then go to step 5.
 - <b>Step 3:</b> If there is a next element, then set current element to next element and go to Step 2.
 - <b>Step 4:</b> Target element not found. Go to Step 6.
-- <b>Step 5:</b> Target element found and return location.
+- <b>Step 5:</b> Target element found and return location. 
 - <b>Step 6:</b> Exit process.
 
 ### <b>Complexity</b>
@@ -57,5 +57,31 @@ When the number is the middle element, then we can reduce the number of potentia
 
 - Worst case time complexity: O(log N)
 - Average case time complexity: O(log N)
+- Best case time complexity: O(1)
+- Space complexity: O(1)
+
+## <b>Jump Search</b>
+
+Jump Search is a searching algorithm for sorted arrays. The basic idea is to check fewer elements by jumping ahead by fixed steps or skipping some elements in place of searching all elements.<br>
+### <b>Algorithm</b>
+<u>The steps involved in this algorithm are:</u>
+*(Block size: B and list size: N; list is sorted in ascending order)*
+
+- **Step 1:** Start from index 1
+- **Step 2:** Jump head by B elements. Current position = Current position + B. If position is out of element list, set current position to last position.
+- **Step 3:** If element at current position < target element, then do Linear Search on element from position current position -B to current position else go to step 2. If current position is last position, go to step 4.
+- **Step 4:** Exit. Element not found.
+
+**\\ How is the perfect block size √N? /**
+
+*Consider the list to be of size N and Block size of size B.*
+
+In the worst case, we have to do **N/B jumps** and if the element is not present, we perform **B-1 comparisons.** Therefore, the total number of comparisons in the worst case will be **((N/B) + B-1).** The value of the function **((N/B) + B-1)** will be minimum when **B = √N.**
+
+Therefore, the best block size is B = √N.
+
+**Complexity**
+- Worst case time complexity: O(√N)
+- Average case time complexity: O(√N)
 - Best case time complexity: O(1)
 - Space complexity: O(1)
