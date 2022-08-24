@@ -50,6 +50,6 @@ int jump_search(int *array, size_t size, int value)
 		jump += sqrt(size);
 		printf("Value checked array[%ld] = [%d]\n", pos, array[pos]);
 	}
-	printf("Value found between indexes [%ld] and [%d]\n", pos, array[pos]);
+	printf("Value found between indexes [%ld] and [%ld]\n", pos, jump);
 	return (linear_search_jump(array, size, value, pos, jump));
 }
