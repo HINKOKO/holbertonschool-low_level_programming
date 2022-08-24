@@ -6,3 +6,32 @@ This repo was designed to study and implement some basics of searching algorithm
 
 - Sequential Search: In this, the list or array is traversed sequentially and every element is checked. For example: <u>Linear Search</u>
 - Interval Search: These algorithms are specifically designed for searching in sorted data-structures. These type of searching algorithms are more efficient than Linear Search method, as they repeatedly target the center of the search structure and divide the search space in 2 half. For Example: <u>Binary Search.</u>
+
+## Linear Search
+
+Linear search (known as sequential search) is an algorithm for finding a target value within a list. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched. This is one of the most basic search algorithms and is directly, inspired by real-life events.
+
+<em>This is the search algorithm that will never fail in our Universe.</em>
+
+ ### <b>Algorithm</b>
+
+Steps involved in this algorithm are:
+
+- <b>Step 1:</b> Select the first element as the current element.
+- <b>Step 2:</b> Compare the current element with the target element. If matches, then go to step 5.
+- <b>Step 3:</b> If there is a next element, then set current element to next element and go to Step 2.
+- <b>Step 4:</b> Target element not found. Go to Step 6.
+- <b>Step 5:</b> Target element found and return location.
+- <b>Step 6:</b> Exit process.
+
+### <b>Complexity</b>
+
+- Worst case time complexity: O(N)
+- Average case time complexity: O(N)
+- Best case time complexity: O(1)
+- Space complexity: O(1)
+
+In theory, Linear search in average makes <b>n/2</b> comparisons where <b>n</b> is the number of elements in the set. At the most, linear search algorithm takes <b>n comparisons.</b>
+
+In terms of implementation, linear search algorithm takes <b>2n+1 comparisons</b> (n to check if target element is found and <b>n+1 comparisons</b> to check if end of list is reached) in the worst case. With optimizations, we can make <b>n+1 comparisons</b> in the worst case.
+
