@@ -1,55 +1,41 @@
 #include "search_algos.h"
+#include <math.h>
 
 /**
- * linear_search_jump - helper function, to search for a value
- * in an array after having used jumping search
- * @array: pointer to first element of array
- * @size: number of elements in the array
- * @value: value to be found in array
- * @start: start of sub_array after jumping
- * @end: end of sub_array after jumping
- * Return: first index where value is located in array
- * or -1 if failure
+ * jump_search - searches for a value in a sorted array of integers
+ * using the Jump search algorithm
+ * @array: array to look into
+ * @size: size of the array
+ * @value: value to look for
+ *
+ * Return: index of the value found, or -1
  */
-
-int linear_search_jump(int *array, size_t size, int value,
-					   size_t start, size_t end)
-{
-	size_t i;
-
-	for (i = start; i <= end && i < size; i++)
-	{
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-		if (array[i] == value)
-			return (i);
-	}
-	return (-1);
-}
-
-/**
- * jump_search - search for value in array using jump search algo
- * @array: pointer to the first element of the array to search in
- * @size: the number of elements in array
- * @value: the value to search forbrief
- * Return: first index where value is located, -1 if failure
- */
-
 int jump_search(int *array, size_t size, int value)
 {
-	size_t pos, jump;
+	size_t start, jump, end;
+	size_t index;
 
-	if (!array || !size)
+	start = 0;
+	jump = sqrt(size);
+	end = jump;
+
+	if (!array || size == 0)
 		return (-1);
 
-	pos = 0;
-	jump = sqrt(size);
-	printf("Value checked array[%ld] = [%d]\n", pos, array[pos]);
-	while (array[jump] <= value && jump < size)
+	while (array[end] < value && end < size)
 	{
-		pos = jump;
-		jump += sqrt(size);
-		printf("Value checked array[%ld] = [%d]\n", pos, array[pos]);
+		printf("Value checked array[%ld] = [%d]\n", start, array[start]);
+		start = end;
+		end += jump;
 	}
-	printf("Value found between indexes [%ld] and [%ld]\n", pos, jump);
-	return (linear_search_jump(array, size, value, pos, jump));
+	printf("Value checked array[%ld] = [%d]\n", start, array[start]);
+
+	printf("Value found between indexes [%ld] and [%ld]\n", start, end);
+	for (index = start; index <= end && index < size; index++)
+	{
+		printf("Value checked array[%ld] = [%d]\n", index, array[index]);
+		if (array[index] == value)
+			return (index);
+	}
+	return (-1);
 }
